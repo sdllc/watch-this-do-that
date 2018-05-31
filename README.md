@@ -2,12 +2,18 @@
 Watch This, Do That
 ===================
 
-1. Watch this  
-2. Do that
+(1) Watch this  
+(2) Do that
 
-`wtdt.config.js`
+run:
 
-```js
+```
+node wtdt.js [--config path/to/config.json] [--verbose]
+```
+
+wtdt.config.json:
+
+```JSON
 [
   {
     "watch": "some-directory/**/*",
