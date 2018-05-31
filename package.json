@@ -1,0 +1,10 @@
+{
+  "name": "watch-this-do-that",
+  "main": "wtdt.js",
+  "version": "1.0.1",
+  "license": "MIT-0",
+  "dependencies": {
+    "chokidar": "^2.0.3",
+    "minimatch": "^3.0.4"
+  }
+}

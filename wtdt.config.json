@@ -1,0 +1,17 @@
+[
+  {
+    "watch": "some-directory/**/*",
+    "do": [
+      "yarn run rebuild",
+      "some-other-shell-command-executed-in-order"
+    ],
+    "log": "something changed, rebuilding"
+  },
+  {
+    "watch": [
+      "test-watch-2/*",
+      "test-watch-3/specific-file"
+    ],
+    "log": "just a notification, not doing anything"
+  }
+]
