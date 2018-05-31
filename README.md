@@ -2,12 +2,12 @@
 Watch This, Do That
 ===================
 
-(1) Watch this  
-(2) Do that
+1. Watch this  
+2. Do that
 
 `wtdt.config.js`
 
-```json
+```js
 [
   {
     "watch": "some-directory/**/*",
