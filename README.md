@@ -28,7 +28,7 @@ wtdt.config.json:
       "test-watch-2/*",
       "test-watch-3/specific-file"
     ],
-    "options: {
+    "options": {
       "path": "./node_modules/.bin"
     },
     "log": "just a notification, not doing anything"
