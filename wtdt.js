@@ -65,6 +65,7 @@ const Do = function(command, obj, file_path){
       }
       console.info(stdout);
       console.info(stderr);
+      resolve();
     });
   });
 }
@@ -85,7 +86,7 @@ const Compare = async function(map, file_path){
 
   // and globs
 
-  map.forEach(async entry => {
+  for(let entry of map){
     if(verbose) console.info("checking", entry.watch);
     let match = false; 
     if(Array.isArray(entry.watch)) match = entry.watch.some(s => minimatch(file_path, s));
@@ -93,11 +94,13 @@ const Compare = async function(map, file_path){
     if(match){
       if(entry.log) console.info("\nWTDT:", entry.log);
       if(entry.do){
-        if(Array.isArray(entry.do)) await entry.do.forEach(command => Do(command, entry, file_path));
+        if(Array.isArray(entry.do)) {
+          for(let command of entry.do) await Do(command, entry, file_path)
+        }
         else await Do(entry.do, entry, file_path);
       }
     }
-  });
+  }
 
 }
 
