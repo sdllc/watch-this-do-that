@@ -59,7 +59,18 @@ if(verbose) console.info("config file:", config_file);
 const Do = function(command, obj, file_path){
   console.info("DO:", command);
   return new Promise((resolve, reject) => {
-    child_process.exec(command, {}, (err, stdout, stderr) => {
+
+    let options = {};
+    if(obj.options){
+      if(obj.options.path){
+        options.env = process.env;
+        if(process.platform === "win32") options.env.PATH += ";";
+        else options.env.PATH += ":";
+        options.env.PATH += obj.options.path;
+      }
+    }
+
+    child_process.exec(command,obj.options, (err, stdout, stderr) => {
       if(err) {
         console.error( "\nerror running command: " + err + "\n");
       }

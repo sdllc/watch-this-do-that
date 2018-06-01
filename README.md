@@ -28,11 +28,16 @@ wtdt.config.json:
       "test-watch-2/*",
       "test-watch-3/specific-file"
     ],
+    "options: {
+      "path": "./node_modules/.bin"
+    },
     "log": "just a notification, not doing anything"
   }
 ]
 
 ```
+
+`options.path` will be *appended* to existing PATH env var.
 
 License
 =======
